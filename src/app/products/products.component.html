@@ -1,0 +1,9 @@
+<div class="w-full max-w-7xl mx-auto my-5 flex flex-col">
+<div class="flex flex-wrap w-full p-5 gap-5">
+<div class="flex flex-col p-5 shadow-lg rounded-md w-full md:w-[25%]" *ngFor="let product of products">
+  <img src={{product.image}} alt={{product.title}} class="w-full">
+  <p class="text-lg my-5"> {{product.title}} </p>
+  <h3 class="text-lg my-5 font-semibold">AUD${{product.price}} </h3>
+</div>
+</div>
+</div>

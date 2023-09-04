@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Product } from 'src/app/models';
 @Injectable({
   providedIn: 'root',
 })
@@ -9,7 +9,9 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getAllProducts(limit: number = 5) {
-    return this.http.get(`${this.baseUrl}products?limit=${limit}`);
+  getAllProducts(limit: number = 10) {
+    return this.http.get<Array<Product>>(
+      `${this.baseUrl}products?limit=${limit}`
+    );
   }
 }
